@@ -1,18 +1,11 @@
 {
-  "dependencies": {
-    "express": "^4.21.0",
-    "mysql2": "^3.11.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
-  "scripts": {
-    "start": "web-dev-server --node-resolve --open --watch"
-  },
-  "name": "crud-node-master",
+  "name": "public",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "",
   "license": "ISC"
 }

@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="app.js"></script>
+    <link rel="stylesheet" href="estilo.css">
     <title>Document</title>
 </head>
-<body>
-    <a href="/obtenerUsuario">Obtener Usuarios</a>
+<body >
+    <div class="body">
 
-    <form action="/agregarUsuario" method="post">
-    <input type="text" name="nombre" placeholder="Nombre de Usuario">
-    <input type="submit" value="Agregar Usuario">
+    <form action="/agregarcategoria" method="post">
+    <input type="text" name="nombre" placeholder="Nombre de categoria">
+    <input type="submit" value="Agregar categoria">
     
   </form>
 
    
    <br>
    <br>
-   <form action="/borrarUsuario" method="post">
-    <input type="text" name="id" placeholder="Ingresa el id">
-    <input type="submit" value="Borrar Usuario">
+   <form action="/borrarCategoria" method="post">
+    <input type="text" name="id" placeholder="Ingresa la categoria">
+    <input type="submit" value="Borrar categoria">
    </form>
 
+   <a href="/obtenerCategorias">Obtener Usuarios</a>
     
-
+</div>
 </body>
 </html>
