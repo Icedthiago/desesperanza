@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Gestión de Categorías</title>
+</head>
+<body class="fondo">
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title text-center">Gestión de Categorías</h1>
+
+            <!-- Formulario para agregar -->
+            <form action="/agregarcategoria" method="post" class="formulario">
+                <input type="text" name="nombre" placeholder="Nombre de categoría">
+                <input type="submit" value="Agregar categoría" class="btn">
+            </form>
+
+            <br>
+
+            <!-- Formulario para borrar -->
+            <form action="/borrarCategoria" method="post" class="formulario">
+                <input type="text" name="nombre" placeholder="Ingresa la categoría">
+                <input type="submit" value="Borrar categoría" class="btn">
+            </form>
+
+            <br>
+
+            <form action="/editarCategoria" method="post" class="formulario">
+                <input type="text" name="nombre_ant" placeholder="ingresa el actual nombre">
+                <input type="text" name="nombre_nuevo" placeholder="Ingresa el nuevo nombre">
+                <input type="submit" value="editar Categoria" class="btn">
+            </form>
+
+            <!-- Link de usuarios -->
+            <div class="text-center">
+                <a href="/obtenerCategorias" class="btn">Obtener Usuarios</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
