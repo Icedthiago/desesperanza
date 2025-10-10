@@ -1,18 +1,17 @@
 {
-  "dependencies": {
-    "express": "^4.21.0",
-    "mysql2": "^3.11.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
-  "scripts": {
-    "start": "nodemon app.js"
-  },
-  "name": "crud-node-master",
+  "name": "mi-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
-  "author": "",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.3.1",
+    "body-parser": "^1.20.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "license": "ISC"
 }
