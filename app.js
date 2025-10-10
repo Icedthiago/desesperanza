@@ -38,15 +38,44 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-function validarSinLetras(texto) {
-    // Esta expresión regular devuelve true si NO hay letras
-    return /^[A-Za-z]+$/.test(str);
+// Función corregida: solo letras A-Z a-z
+function validarSoloLetras(texto) {
+  return /^[A-Za-z]+$/.test(texto);
 }
+
 
 function removeScriptsTags (html) {
     if (!html) return '';
     return html.replace (/<[^>]*>?/gm,'').replace(/<\?php.*?\?>/gs,'') ;
 }
+
+const pool = mysql.createPool({
+  host:     process.env.MYSQL_HOST,
+  port:     Number(process.env.MYSQL_PORT),
+  user:     process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  waitForConnections: true,
+  connectionLimit: 10,
+});
+
+async function init() {
+  try {
+    const conn = await pool.getConnection();
+    console.log("Conexión a MySQL exitosa");
+    conn.release();
+  } catch (err) {
+    console.error("Error de conexión a MySQL:", err);
+  }
+}
+
+init();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+
 
 app.use(express.static('public'))
 
@@ -173,4 +202,11 @@ con.query('UPDATE categorias SET name = ? WHERE name = ?', [nombre_nuevo, nombre
         }
         return res.send(`Nuevo nombre de usuario ${nombre_nuevo} modificado correctamente`);
     });
+
+    app.listen(process.env.PORT || 10000, () => {
+  console.log(
+    `Servidor escuchando en el puerto ${process.env.PORT || 10000}`
+  );
+
+});
 });
